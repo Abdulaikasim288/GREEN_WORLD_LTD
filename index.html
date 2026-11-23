@@ -3,194 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GREEN WORLD COMPANY LIMITED</title>
+<title>Green World Company Limited</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{display:flex;background:#f3f5f3;min-height:100vh}
-/* SIDEBAR - SAME AS YOURS */
-.sidebar{width:260px;background:#0b3d24;color:white;padding:20px;position:fixed;height:100vh;overflow-y:auto}
-.sidebar h2{font-size:18px;line-height:1.3}
-.sidebar small{color:#b7d8c5;font-size:11px}
-.sidebar .admin{margin:20px 0;background:#123f2a;padding:12px;border-radius:10px;display:flex;gap:10px;align-items:center}
-.sidebar .admin b{font-size:14px}.sidebar .admin span{font-size:11px;color:#b7d8c5}
-.nav button{display:block;width:100%;text-align:left;background:transparent;border:0;color:white;padding:12px;border-radius:8px;cursor:pointer;font-size:14px;margin-bottom:4px}
-.nav button.active,.nav button:hover{background:#1a6b3f}
+body{display:flex;background:#f4f6f4;min-height:100vh}
+/* OLD DESIGN - SIDEBAR */
+.sidebar{width:260px;background:#1e3a2a;color:white;padding:20px 15px;position:fixed;height:100vh;overflow-y:auto}
+.logo-box{text-align:center;margin-bottom:25px}
+.logo-box img{width:85px;height:85px;object-fit:contain;background:white;border-radius:50%;padding:5px}
+.logo-box h2{color:#f2c14e;font-size:17px;letter-spacing:1px;margin-top:8px}
+.logo-box p{font-size:10px;letter-spacing:2px;color:#ddd}
+.nav button{display:block;width:100%;text-align:left;background:transparent;border:0;color:white;padding:13px 12px;border-radius:8px;cursor:pointer;font-size:14px;margin-bottom:4px}
+.nav button.active{background:#2e5a40;border-left:4px solid #f2c14e}
+.nav button:hover{background:#2e5a40}
 .main{margin-left:260px;flex:1;padding:20px}
-.topbar{display:flex;justify-content:space-between;align-items:center;background:white;padding:15px 20px;border-radius:12px;margin-bottom:20px}
-.topbar h1{font-size:20px}.topbar p{font-size:12px;color:#666}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.topbar h1{font-size:20px;color:#1e3a2a}.topbar p{font-size:12px;color:#888}
+/* OLD WELCOME BANNER */
+.welcome{background:#1e3a2a;color:white;padding:22px;border-radius:14px;margin-bottom:18px}
+.welcome h2{font-size:21px}.welcome p{font-size:13px;color:#ddd;margin:4px 0}.welcome b{color:#f2c14e;letter-spacing:1px;font-size:13px}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}
-.card{background:white;padding:18px;border-radius:12px}
-.card small{color:#666}.card h2{margin:8px 0}.card span{font-size:12px;color:green}
-.card span.red{color:red}
-.box{background:white;padding:18px;border-radius:12px;margin-bottom:20px}
-.box h3{margin-bottom:12px}
+.card{background:white;padding:18px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.card small{color:#555;display:flex;justify-content:space-between}.card h2{margin-top:8px;font-size:22px}
+.box{background:white;padding:18px;border-radius:12px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.box h3{margin-bottom:12px;color:#1e3a2a}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:10px;text-align:left;border-bottom:1px solid #eee}
-th{background:#f8f8f8}
-.badge{padding:4px 10px;border-radius:20px;font-size:11px;background:#e6f4ea;color:green}
-.badge.orange{background:#fff0d9;color:#b77900}
-.badge.red{background:#ffe6e6;color:red}
-input,select{width:100%;padding:10px;margin:6px 0;border:1px solid #ddd;border-radius:8px}
-.btn{background:#0b3d24;color:white;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
-.btn.light{background:#eef3ef;color:#0b3d24}
-.flex{display:flex;gap:10px;align-items:center}
-.search{max-width:300px}
-.hidden{display:none}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+th{background:#1e3a2a;color:white;padding:11px;text-align:left}
+td{padding:11px;border-bottom:1px solid #eee}
+input,select{width:100%;padding:11px;margin:6px 0;border:1px solid #ddd;border-radius:8px}
+.btn{background:#1e3a2a;color:white;border:0;padding:11px 18px;border-radius:8px;cursor:pointer}
+.btn.gold{background:#f2c14e;color:#1e3a2a;font-weight:bold}
+.flex{display:flex;gap:10px;align-items:center}.hidden{display:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.badge{background:#e6f4ea;color:green;padding:4px 10px;border-radius:20px;font-size:11px}
 @media(max-width:800px){.sidebar{display:none}.main{margin-left:0}.cards{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <div class="sidebar">
-  <h2>GREEN WORLD<br>COMPANY LIMITED</h2>
-  <small>Fuel Station Management</small>
-  <div class="admin"><div style="background:#1a6b3f;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center">AK</div><div><b>Abdulai Kasim</b><br><span>Administrator</span></div></div>
+  <div class="logo-box">
+    <!-- YOUR REAL LOGO - upload logo.png to GitHub -->
+    <img src="logo.png" alt="Greenworld Oil Logo" onerror="this.style.display='none'">
+    <h2>GREEN WORLD</h2><p>COMPANY LIMITED</p>
+  </div>
   <div class="nav">
     <button class="active" onclick="show('dashboard',this)">📊 Dashboard</button>
+    <button onclick="show('sales',this)">⛽ Fuel Sales</button>
+    <button onclick="show('stocks',this)">🛢️ Fuel Stock</button>
+    <button onclick="show('deliveries',this)">🚚 Deliveries</button>
     <button onclick="show('employees',this)">👥 Employees</button>
     <button onclick="show('customers',this)">🧑‍🤝‍🧑 Customers</button>
-    <button onclick="show('sales',this)">⛽ Fuel Sales</button>
-    <button onclick="show('deliveries',this)">🚚 Deliveries</button>
     <button onclick="show('expenses',this)">💰 Expenses</button>
-    <button onclick="show('stocks',this)">🛢️ Fuel Stocks</button>
+    <button onclick="show('reports',this)">📄 Reports</button>
   </div>
-  <p style="font-size:11px;color:#b7d8c5;margin-top:20px">Data is saved automatically in this browser. It will stay even after refresh.</p>
+  <p style="font-size:11px;color:#a8c5b5;margin-top:20px;text-align:center">THE UNLIMITED OIL.<br>Data saves automatically</p>
 </div>
 
 <div class="main">
-  <div class="topbar"><div><h1>Management Dashboard</h1><p>Welcome back, Abdulai Kasim • Today</p></div><div class="flex"><input class="search" id="globalSearch" placeholder="Search anything..." oninput="globalSearch()"><button class="btn" onclick="exportData()">Export</button></div></div>
+  <div class="topbar"><div><h1>Management Dashboard</h1><p>Welcome back, Abdulai Kasim</p></div><div class="flex"><input id="globalSearch" placeholder="Search..." oninput="globalSearch()" style="max-width:220px"><button class="btn gold" onclick="location.reload()">↻ Refresh</button></div></div>
 
-  <!-- DASHBOARD -->
   <div id="dashboard">
+    <div class="welcome"><h2>Welcome to Green World Company Limited</h2><p>Fuel Station Management System</p><b>THE UNLIMITED OIL.</b></div>
     <div class="cards">
-      <div class="card"><small>Today's Sales</small><h2 id="totalSales">GH₵ 0</h2><span id="salesCount">0 sales</span></div>
-      <div class="card"><small>Fuel Stock</small><h2 id="totalStock">0 L</h2><span>Petrol + Diesel</span></div>
-      <div class="card"><small>Total Employees</small><h2 id="totalEmp">0</h2><span>Active staff</span></div>
-      <div class="card"><small>Active Deliveries</small><h2 id="totalDel">0</h2><span class="red" id="totalExp">GH₵ 0 expenses</span></div>
+      <div class="card"><small>Today's Sales <span>💰</span></small><h2 id="totalSales">GH₵ 0</h2></div>
+      <div class="card"><small>Fuel Stock <span>⛽</span></small><h2 id="totalStock">0 L</h2></div>
+      <div class="card"><small>Employees <span>👤</span></small><h2 id="totalEmp">0</h2></div>
+      <div class="card"><small>Deliveries <span>🚚</span></small><h2 id="totalDel">0</h2></div>
     </div>
-    <div class="box"><h3>Recent Fuel Sales</h3><table><thead><tr><th>ID</th><th>Customer</th><th>Fuel Type</th><th>Litres</th><th>Amount</th><th>Status</th></tr></thead><tbody id="salesTable"></tbody></table></div>
-    <div class="box"><h3>Employee Directory - Recent</h3><table><thead><tr><th>Name</th><th>Role</th><th>Phone</th><th>Status</th></tr></thead><tbody id="empPreview"></tbody></table></div>
+    <div class="box"><h3>Recent Transactions</h3><table><thead><tr><th>Transaction ID</th><th>Date</th><th>Fuel</th><th>Quantity</th><th>Amount</th><th>Attendant</th></tr></thead><tbody id="salesTable"></tbody></table></div>
+    <div class="box"><h3>Employee Directory</h3><table><thead><tr><th>Name</th><th>Role</th><th>Phone</th><th>Status</th></tr></thead><tbody id="empPreview"></tbody></table></div>
   </div>
 
-  <!-- EMPLOYEES -->
-  <div id="employees" class="hidden">
-    <div class="box"><h3>Add Employee</h3><div class="grid2"><input id="empName" placeholder="Full Name e.g. Kwame Mensah"><input id="empPhone" placeholder="Phone e.g. 024 123 4567"></div><div class="grid2"><input id="empRole" placeholder="Role e.g. Pump Attendant"><select id="empStatus"><option>Active</option><option>On Leave</option><option>Inactive</option></select></div><button class="btn" onclick="addEmployee()">+ Save Employee</button></div>
-    <div class="box"><h3>All Employees</h3><input placeholder="Search employee by name..." oninput="renderEmployees(this.value)"><table><thead><tr><th>Name</th><th>Role</th><th>Phone</th><th>Status</th><th>Action</th></tr></thead><tbody id="empTable"></tbody></table></div>
-  </div>
+  <div id="sales" class="hidden"><div class="box"><h3>Add Fuel Sale</h3><div class="grid2"><input id="saleCus" placeholder="Customer / Attendant Name"><select id="saleFuel"><option>Petrol</option><option>Diesel</option></select></div><div class="grid2"><input id="saleLitres" type="number" placeholder="Litres e.g. 50"><input id="saleAmount" type="number" placeholder="Amount GH₵"></div><button class="btn" onclick="addSale()">+ Save Sale</button></div><div class="box"><h3>All Sales</h3><table><thead><tr><th>ID</th><th>Customer</th><th>Fuel</th><th>Litres</th><th>Amount</th><th>Action</th></tr></thead><tbody id="salesFull"></tbody></table></div></div>
 
-  <!-- CUSTOMERS -->
-  <div id="customers" class="hidden">
-    <div class="box"><h3>Add Customer</h3><div class="grid2"><input id="cusName" placeholder="Customer Name"><input id="cusPhone" placeholder="Phone"></div><button class="btn" onclick="addCustomer()">+ Save Customer</button></div>
-    <div class="box"><h3>All Customers</h3><table><thead><tr><th>Name</th><th>Phone</th><th>Action</th></tr></thead><tbody id="cusTable"></tbody></table></div>
-  </div>
+  <div id="employees" class="hidden"><div class="box"><h3>Add Employee</h3><div class="grid2"><input id="empName" placeholder="Full Name"><input id="empPhone" placeholder="Phone"></div><div class="grid2"><input id="empRole" placeholder="Role e.g. Pump Attendant"><select id="empStatus"><option>Active</option><option>On Leave</option><option>Inactive</option></select></div><button class="btn" onclick="addEmployee()">+ Save Employee</button></div><div class="box"><h3>All Employees</h3><input placeholder="Search employee..." oninput="renderEmployees(this.value)"><table><thead><tr><th>Name</th><th>Role</th><th>Phone</th><th>Status</th><th>Action</th></tr></thead><tbody id="empTable"></tbody></table></div></div>
 
-  <!-- SALES -->
-  <div id="sales" class="hidden">
-    <div class="box"><h3>Add Fuel Sale</h3><div class="grid2"><input id="saleCus" placeholder="Customer Name"><select id="saleFuel"><option>Petrol</option><option>Diesel</option></select></div><div class="grid2"><input id="saleLitres" type="number" placeholder="Litres e.g. 50"><input id="saleAmount" type="number" placeholder="Amount GH₵ e.g. 750"></div><button class="btn" onclick="addSale()">+ Save Sale</button></div>
-    <div class="box"><h3>All Sales</h3><table><thead><tr><th>ID</th><th>Customer</th><th>Fuel</th><th>Litres</th><th>Amount</th><th>Action</th></tr></thead><tbody id="salesFull"></tbody></table></div>
-  </div>
+  <div id="customers" class="hidden"><div class="box"><h3>Add Customer</h3><div class="grid2"><input id="cusName" placeholder="Customer Name"><input id="cusPhone" placeholder="Phone"></div><button class="btn" onclick="addCustomer()">+ Save Customer</button></div><div class="box"><h3>All Customers</h3><table><thead><tr><th>Name</th><th>Phone</th><th>Action</th></tr></thead><tbody id="cusTable"></tbody></table></div></div>
 
-  <!-- DELIVERIES -->
-  <div id="deliveries" class="hidden">
-    <div class="box"><h3>Add Delivery</h3><div class="grid2"><input id="delName" placeholder="Delivery / Supplier e.g. TOR Delivery"><input id="delLitres" type="number" placeholder="Litres"></div><button class="btn" onclick="addDelivery()">+ Save Delivery</button></div>
-    <div class="box"><h3>All Deliveries</h3><table><thead><tr><th>Name</th><th>Litres</th><th>Action</th></tr></thead><tbody id="delTable"></tbody></table></div>
-  </div>
+  <div id="deliveries" class="hidden"><div class="box"><h3>Add Delivery</h3><div class="grid2"><input id="delName" placeholder="Supplier"><input id="delLitres" type="number" placeholder="Litres"></div><button class="btn" onclick="addDelivery()">+ Save Delivery</button></div><div class="box"><h3>All Deliveries</h3><table><thead><tr><th>Name</th><th>Litres</th><th>Action</th></tr></thead><tbody id="delTable"></tbody></table></div></div>
 
-  <!-- EXPENSES -->
-  <div id="expenses" class="hidden">
-    <div class="box"><h3>Add Expense</h3><div class="grid2"><input id="expName" placeholder="Expense e.g. Station Maintenance"><input id="expAmount" type="number" placeholder="Amount GH₵"></div><button class="btn" onclick="addExpense()">+ Save Expense</button></div>
-    <div class="box"><h3>All Expenses</h3><table><thead><tr><th>Expense</th><th>Amount</th><th>Action</th></tr></thead><tbody id="expTable"></tbody></table></div>
-  </div>
+  <div id="expenses" class="hidden"><div class="box"><h3>Add Expense</h3><div class="grid2"><input id="expName" placeholder="Expense"><input id="expAmount" type="number" placeholder="Amount GH₵"></div><button class="btn" onclick="addExpense()">+ Save Expense</button></div><div class="box"><h3>All Expenses</h3><table><thead><tr><th>Expense</th><th>Amount</th><th>Action</th></tr></thead><tbody id="expTable"></tbody></table></div></div>
 
-  <!-- STOCKS -->
-  <div id="stocks" class="hidden">
-    <div class="box"><h3>Add / Update Fuel Stock</h3><div class="grid2"><select id="stockFuel"><option>Petrol</option><option>Diesel</option></select><input id="stockLitres" type="number" placeholder="Litres in Tank"></div><button class="btn" onclick="addStock()">+ Save Stock</button></div>
-    <div class="box"><h3>Current Stock</h3><table><thead><tr><th>Fuel</th><th>Litres</th><th>Action</th></tr></thead><tbody id="stockTable"></tbody></table></div>
-  </div>
+  <div id="stocks" class="hidden"><div class="box"><h3>Add / Update Stock</h3><div class="grid2"><select id="stockFuel"><option>Petrol</option><option>Diesel</option></select><input id="stockLitres" type="number" placeholder="Litres in Tank"></div><button class="btn" onclick="addStock()">+ Save Stock</button></div><div class="box"><h3>Current Stock</h3><table><thead><tr><th>Fuel</th><th>Litres</th><th>Action</th></tr></thead><tbody id="stockTable"></tbody></table></div></div>
 
+  <div id="reports" class="hidden"><div class="box"><h3>Reports</h3><p id="reportText"></p><button class="btn" onclick="window.print()">Print Report</button></div></div>
 </div>
 
 <script>
-// SAVE SYSTEM - localStorage = memory of website
-let employees = JSON.parse(localStorage.getItem('gw_employees')||'[{"name":"Kwame Mensah","role":"Pump Attendant","phone":"024 123 4567","status":"Active"},{"name":"Ama Serwaa","role":"Cashier","phone":"020 987 6543","status":"Active"}]');
-let customers = JSON.parse(localStorage.getItem('gw_customers')||'[{"name":"Abena Osei","phone":"055 111 2222"}]');
-let sales = JSON.parse(localStorage.getItem('gw_sales')||'[{"id":"GW-001","customer":"Ama Serwaa","fuel":"Petrol","litres":50,"amount":750},{"id":"GW-002","customer":"Kwame Mensah","fuel":"Diesel","litres":120,"amount":1800}]');
+let employees = JSON.parse(localStorage.getItem('gw_employees')||'[{"name":"Abdul","role":"Attendant","phone":"024 123 4567","status":"Active"},{"name":"Mohammed","role":"Attendant","phone":"020 987 6543","status":"Active"}]');
+let customers = JSON.parse(localStorage.getItem('gw_customers')||'[{"name":"Ama Serwaa","phone":"055 111 2222"}]');
+let sales = JSON.parse(localStorage.getItem('gw_sales')||'[{"id":"GW-001","customer":"Abdul","fuel":"Petrol","litres":50,"amount":650},{"id":"GW-002","customer":"Mohammed","fuel":"Diesel","litres":80,"amount":1040}]');
 let deliveries = JSON.parse(localStorage.getItem('gw_deliveries')||'[{"name":"TOR Delivery","litres":5000}]');
-let expenses = JSON.parse(localStorage.getItem('gw_expenses')||'[{"name":"Station Maintenance","amount":1200}]');
+let expenses = JSON.parse(localStorage.getItem('gw_expenses')||'[{"name":"Maintenance","amount":1200}]');
 let stocks = JSON.parse(localStorage.getItem('gw_stocks')||'[{"fuel":"Petrol","litres":10250},{"fuel":"Diesel","litres":8200}]');
-
-function saveAll(){
-  localStorage.setItem('gw_employees',JSON.stringify(employees));
-  localStorage.setItem('gw_customers',JSON.stringify(customers));
-  localStorage.setItem('gw_sales',JSON.stringify(sales));
-  localStorage.setItem('gw_deliveries',JSON.stringify(deliveries));
-  localStorage.setItem('gw_expenses',JSON.stringify(expenses));
-  localStorage.setItem('gw_stocks',JSON.stringify(stocks));
-  renderAll();
-}
-function show(id,btn){
-  document.querySelectorAll('.main > div > div[id]').forEach(()=>{});
-  ['dashboard','employees','customers','sales','deliveries','expenses','stocks'].forEach(x=>document.getElementById(x).classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-}
-function addEmployee(){
-  if(!empName.value) return alert('Enter name');
-  employees.push({name:empName.value,phone:empPhone.value,role:empRole.value,status:empStatus.value});
-  empName.value=empPhone.value=empRole.value=''; saveAll(); alert('Employee Saved!');
-}
-function addCustomer(){
-  if(!cusName.value) return alert('Enter name');
-  customers.push({name:cusName.value,phone:cusPhone.value}); cusName.value=cusPhone.value=''; saveAll(); alert('Customer Saved!');
-}
-function addSale(){
-  if(!saleCus.value) return alert('Enter customer');
-  sales.unshift({id:'GW-'+String(100+sales.length+1),customer:saleCus.value,fuel:saleFuel.value,litres:saleLitres.value,amount:saleAmount.value});
-  saleCus.value=saleLitres.value=saleAmount.value=''; saveAll(); alert('Sale Saved!');
-}
-function addDelivery(){
-  deliveries.push({name:delName.value,litres:delLitres.value}); delName.value=delLitres.value=''; saveAll(); alert('Delivery Saved!');
-}
-function addExpense(){
-  expenses.push({name:expName.value,amount:Number(expAmount.value)}); expName.value=expAmount.value=''; saveAll(); alert('Expense Saved!');
-}
-function addStock(){
-  let f=stocks.find(s=>s.fuel===stockFuel.value);
-  if(f) f.litres=Number(stockLitres.value); else stocks.push({fuel:stockFuel.value,litres:Number(stockLitres.value)});
-  saveAll(); alert('Stock Saved!');
-}
-function del(arr,i){ arr.splice(i,1); saveAll(); }
-function renderEmployees(filter=''){
-  empTable.innerHTML = employees.filter(e=>e.name.toLowerCase().includes(filter.toLowerCase())).map((e,i)=>`<tr><td>${e.name}</td><td>${e.role}</td><td>${e.phone}</td><td><span class="badge">${e.status}</span></td><td><button onclick="del(employees,${i})">Delete</button></td></tr>`).join('') || '<tr><td colspan=5>No employees found</td></tr>';
-  empPreview.innerHTML = employees.slice(0,5).map(e=>`<tr><td>${e.name}</td><td>${e.role}</td><td>${e.phone}</td><td><span class="badge">${e.status}</span></td></tr>`).join('');
-}
-function renderAll(){
-  let totalSales = sales.reduce((a,b)=>a+Number(b.amount||0),0);
-  let totalStock = stocks.reduce((a,b)=>a+Number(b.litres||0),0);
-  let totalExp = expenses.reduce((a,b)=>a+Number(b.amount||0),0);
-  document.getElementById('totalSales').innerText='GH₵ '+totalSales.toLocaleString();
-  document.getElementById('salesCount').innerText=sales.length+' sales';
-  document.getElementById('totalStock').innerText=totalStock.toLocaleString()+' L';
-  document.getElementById('totalEmp').innerText=employees.length;
-  document.getElementById('totalDel').innerText=deliveries.length;
-  document.getElementById('totalExp').innerText='GH₵ '+totalExp.toLocaleString()+' expenses';
-  salesTable.innerHTML = sales.slice(0,5).map(s=>`<tr><td>${s.id}</td><td>${s.customer}</td><td>${s.fuel}</td><td>${s.litres} L</td><td>GH₵ ${s.amount}</td><td><span class="badge">Completed</span></td></tr>`).join('');
-  salesFull.innerHTML = sales.map((s,i)=>`<tr><td>${s.id}</td><td>${s.customer}</td><td>${s.fuel}</td><td>${s.litres}</td><td>GH₵ ${s.amount}</td><td><button onclick="del(sales,${i})">Delete</button></td></tr>`).join('');
-  cusTable.innerHTML = customers.map((c,i)=>`<tr><td>${c.name}</td><td>${c.phone}</td><td><button onclick="del(customers,${i})">Delete</button></td></tr>`).join('');
-  delTable.innerHTML = deliveries.map((d,i)=>`<tr><td>${d.name}</td><td>${d.litres} L</td><td><button onclick="del(deliveries,${i})">Delete</button></td></tr>`).join('');
-  expTable.innerHTML = expenses.map((e,i)=>`<tr><td>${e.name}</td><td>GH₵ ${e.amount}</td><td><button onclick="del(expenses,${i})">Delete</button></td></tr>`).join('');
-  stockTable.innerHTML = stocks.map((s,i)=>`<tr><td>${s.fuel}</td><td>${s.litres} L</td><td><button onclick="del(stocks,${i})">Delete</button></td></tr>`).join('');
-  renderEmployees();
-}
-function globalSearch(){
-  let q=document.getElementById('globalSearch').value.toLowerCase();
-  if(!q) return renderAll();
-  let found = employees.filter(e=>e.name.toLowerCase().includes(q));
-  if(found.length){ show('employees'); renderEmployees(q); }
-}
-function exportData(){ alert('Your data is saved in this browser. Copy: '+JSON.stringify({employees,customers,sales})); }
+function saveAll(){localStorage.setItem('gw_employees',JSON.stringify(employees));localStorage.setItem('gw_customers',JSON.stringify(customers));localStorage.setItem('gw_sales',JSON.stringify(sales));localStorage.setItem('gw_deliveries',JSON.stringify(deliveries));localStorage.setItem('gw_expenses',JSON.stringify(expenses));localStorage.setItem('gw_stocks',JSON.stringify(stocks));renderAll();}
+function show(id,btn){['dashboard','sales','stocks','deliveries','employees','customers','expenses','reports'].forEach(x=>document.getElementById(x).classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
+function addEmployee(){if(!empName.value)return alert('Enter name');employees.push({name:empName.value,phone:empPhone.value,role:empRole.value,status:empStatus.value});empName.value=empPhone.value=empRole.value='';saveAll();alert('Employee Saved!');}
+function addCustomer(){if(!cusName.value)return alert('Enter name');customers.push({name:cusName.value,phone:cusPhone.value});cusName.value=cusPhone.value='';saveAll();alert('Customer Saved!');}
+function addSale(){if(!saleCus.value)return alert('Enter name');sales.unshift({id:'GW-'+String(100+sales.length+1),customer:saleCus.value,fuel:saleFuel.value,litres:saleLitres.value,amount:saleAmount.value});saleCus.value=saleLitres.value=saleAmount.value='';saveAll();alert('Sale Saved!');}
+function addDelivery(){deliveries.push({name:delName.value,litres:delLitres.value});delName.value=delLitres.value='';saveAll();alert('Delivery Saved!');}
+function addExpense(){expenses.push({name:expName.value,amount:Number(expAmount.value)});expName.value=expAmount.value='';saveAll();alert('Expense Saved!');}
+function addStock(){let f=stocks.find(s=>s.fuel===stockFuel.value);if(f)f.litres=Number(stockLitres.value);else stocks.push({fuel:stockFuel.value,litres:Number(stockLitres.value)});saveAll();alert('Stock Saved!');}
+function del(arr,i){arr.splice(i,1);saveAll();}
+function renderEmployees(filter=''){empTable.innerHTML=employees.filter(e=>e.name.toLowerCase().includes(filter.toLowerCase())).map((e,i)=>`<tr><td>${e.name}</td><td>${e.role}</td><td>${e.phone}</td><td><span class="badge">${e.status}</span></td><td><button onclick="del(employees,${i})">Delete</button></td></tr>`).join('')||'<tr><td colspan=5>No employees</td></tr>';empPreview.innerHTML=employees.slice(0,5).map(e=>`<tr><td>${e.name}</td><td>${e.role}</td><td>${e.phone}</td><td><span class="badge">${e.status}</span></td></tr>`).join('');}
+function renderAll(){let ts=sales.reduce((a,b)=>a+Number(b.amount||0),0);let tst=stocks.reduce((a,b)=>a+Number(b.litres||0),0);let te=expenses.reduce((a,b)=>a+Number(b.amount||0),0);document.getElementById('totalSales').innerText='GH₵ '+ts.toLocaleString();document.getElementById('totalStock').innerText=tst.toLocaleString()+' L';document.getElementById('totalEmp').innerText=employees.length;document.getElementById('totalDel').innerText=deliveries.length;document.getElementById('reportText').innerText=`Total Sales: GH₵ ${ts} | Total Expenses: GH₵ ${te} | Employees: ${employees.length} | Stock: ${tst} L`;salesTable.innerHTML=sales.slice(0,5).map(s=>`<tr><td>${s.id}</td><td>16/09/2026</td><td>${s.fuel}</td><td>${s.litres} L</td><td>GH₵ ${s.amount}</td><td>${s.customer}</td></tr>`).join('');salesFull.innerHTML=sales.map((s,i)=>`<tr><td>${s.id}</td><td>${s.customer}</td><td>${s.fuel}</td><td>${s.litres}</td><td>GH₵ ${s.amount}</td><td><button onclick="del(sales,${i})">Delete</button></td></tr>`).join('');cusTable.innerHTML=customers.map((c,i)=>`<tr><td>${c.name}</td><td>${c.phone}</td><td><button onclick="del(customers,${i})">Delete</button></td></tr>`).join('');delTable.innerHTML=deliveries.map((d,i)=>`<tr><td>${d.name}</td><td>${d.litres} L</td><td><button onclick="del(deliveries,${i})">Delete</button></td></tr>`).join('');expTable.innerHTML=expenses.map((e,i)=>`<tr><td>${e.name}</td><td>GH₵ ${e.amount}</td><td><button onclick="del(expenses,${i})">Delete</button></td></tr>`).join('');stockTable.innerHTML=stocks.map((s,i)=>`<tr><td>${s.fuel}</td><td>${s.litres} L</td><td><button onclick="del(stocks,${i})">Delete</button></td></tr>`).join('');renderEmployees();}
+function globalSearch(){let q=document.getElementById('globalSearch').value.toLowerCase();if(!q)return renderAll();if(employees.some(e=>e.name.toLowerCase().includes(q))){show('employees');renderEmployees(q);}}
 renderAll();
 </script>
 </body>
